@@ -1,5 +1,7 @@
 ## Sensu-Plugins-Slack
 
+![Alt text](images/slack_handler.png)
+
 Easily send formatted event notifications to one or more more slack channels using Slack's [webhook](https://api.slack.com/incoming-webhooks) framework with a simple handler configuration. Take more control by crafting interactive slack messages using custom ERB templates.
 
 References:
@@ -93,10 +95,12 @@ This command will result in messages being sent to channels:
 
 
 ### Advanced Configuration Options
-* **dashboard**: publicly accessible dashboard url stub for event alert. If defined, the pre-formatted Slack message will include a link to the dashboard. Uchiwa compatible dashboard stub `http(s)://<host>:<port>/#/client/<DataCenter>/`
+* **dashboard**: publicly accessible dashboard url stub for event alert. If defined, the pre-formatted Slack message will include a link to the dashboard. Uchiwa compatible values take the form: `http(s)://<host>:<port>/#/client/<DataCenter>/`
 * **message_prefix**: static text to prepend to pre-formatted event notices sent by the slack handler. 
 * **fields**: Array of client attributes to include in the pre-formatted message
-* **message_template**: ERB template file. 
+* **message_template**: ERB template file for message content. This template will have access to the `@event` variable, a ruby hash object representation of the Sensu event data passed to the handler executable via stdlin. `@event['client']` and `@event['check']` hold the corresponding client and check information.
+* * **payload_template**: ERB template file for the Slack payload. If this template option listed above will be overridden.
+
 * _HTTP Proxy_:  post message to a http proxy via `Net::HTTP::Proxy`
     * **proxy_address**: proxy address 
     * **proxy_port**: proxy port 
