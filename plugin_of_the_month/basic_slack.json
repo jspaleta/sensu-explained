@@ -1,0 +1,6 @@
+{
+  "slack_test": {
+    "webhook_url": "https://hooks.slack.com/services/something/something/something",
+  }
+}
+

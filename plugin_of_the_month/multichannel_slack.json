@@ -1,0 +1,15 @@
+{
+  "slack_multi_test": {
+    "webhook_urls": {
+      "test-one":   "https://hooks.slack.com/services/AAAAAA",
+      "test-two":   "https://hooks.slack.com/services/BBBBBB",
+      "test-three": "https://hooks.slack.com/services/CCCCCC",
+      "test-four":  "https://hooks.slack.com/services/DDDDDD"
+    },
+    "channels": {
+      "default":    [ "test-one" ],
+      "compulsory": [ "test-two" ]
+    }
+  }
+}
+
