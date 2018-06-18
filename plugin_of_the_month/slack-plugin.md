@@ -99,7 +99,7 @@ This command will result in messages being sent to channels:
 * **message_prefix**: static text to prepend to pre-formatted event notices sent by the slack handler. 
 * **fields**: Array of client attributes to include in the pre-formatted message
 * **message_template**: ERB template file for message content. This template will have access to the `@event` variable, a ruby hash object representation of the Sensu event data passed to the handler executable via stdlin. `@event['client']` and `@event['check']` hold the corresponding client and check information.
-* * **payload_template**: ERB template file for the Slack payload. If this template option listed above will be overridden.
+* **payload_template**: ERB template file for the Slack payload. If this template option is used, most of the formatting options listed above will be overridden.
 
 * _HTTP Proxy_:  post message to a http proxy via `Net::HTTP::Proxy`
     * **proxy_address**: proxy address 
