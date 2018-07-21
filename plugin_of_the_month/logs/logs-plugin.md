@@ -2,7 +2,7 @@
 
 ![Alt text](../images/logevent_handler.png)
 
-Send alerts to dedicated log directory with the most recent entries to keep.  
+Store a JSON representation of the most recent Sensu events in a dedicated directory structure using the handler-logevent.rb handler command.
 
 References:
 
